@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20/05/2006 12:09:10 by Hibernate Tools 3.1.0.beta5 -->
+<hibernate-mapping>
+    <class name="br.com.eder.cms.model.Administrador" table="administrador" >
+    
+        <id name="usuario" type="string">
+        	<meta attribute="use-in-equals">true</meta>
+            <column name="usuario" length="50" />
+            <generator class="assigned" />
+        </id>
+        
+         <property name="senha" type="string">
+            <column name="senha" precision="50" />
+        </property>
+        
+        <property name="dica" type="string">
+            <column name="dica" length="50" />
+        </property>
+        
+        <property name="email" type="string">
+            <column name="email" precision="50" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

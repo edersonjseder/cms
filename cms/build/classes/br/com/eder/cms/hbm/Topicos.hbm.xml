@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20/05/2006 12:09:10 by Hibernate Tools 3.1.0.beta5 -->
+<hibernate-mapping>
+    <class name="br.com.eder.cms.model.Topicos" table="topicos" >
+    
+        <id name="idTopicos" type="java.lang.Integer">
+        	<meta attribute="use-in-equals">true</meta>
+            <column name="idTopicos" length="50" />
+            <generator class="assigned" />
+        </id>
+        
+        <many-to-one name="secao" class="br.com.eder.cms.model.Secao" fetch="join">
+            <column name="Secao_idSecao" length="50" />
+        </many-to-one>
+        
+        <property name="nome" type="string">
+            <column name="nome" precision="50" />
+        </property>
+        
+        <property name="detalhe" type="string">
+            <column name="detalhe" precision="50" />
+        </property>
+        
+        <property name="status" type="string">
+            <column name="statuss" length="1" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

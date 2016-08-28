@@ -1,0 +1,215 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+   
+    <package name="default" extends="struts-default">
+    
+    	<action name="Inicial" class="Execucao" method="execute">
+            <result>/Inicio.jsp</result>
+        </action>
+    
+        <action name="Administrador" class="Execucao" method="execute">
+            <result>/loginAdministrador.jsp</result>
+        </action>
+        
+        <action name="Usuario" class="Execucao" method="execute">
+            <result>/loginUsuario.jsp</result>
+        </action>
+        
+        <action name="ExibirAdministrador"
+			class="br.com.eder.cms.action.AdministradorAction"
+			method="execute">
+			<result name="success" type="redirect">/PaginaInicialAdministrador.jsp</result>
+			<result name="input" type="dispatcher">/loginErroAdministrador.jsp</result>
+			<result name="error" type="dispatcher">/loginErroAdministrador.jsp</result>
+		</action>
+		
+		<action name="ExibirUsuario"
+			class="br.com.eder.cms.action.UsuarioAction"
+			method="execute">
+			<result name="success" type="redirect">/PaginaInicialUsuario.jsp</result>
+			<result name="input" type="dispatcher">/loginErroUsuario.jsp</result>
+			<result name="error" type="dispatcher">/loginErroUsuario.jsp</result>
+		</action>
+		
+		<action name="ExibirAdministradorPagina"
+			class="br.com.eder.cms.action.AdministradorAction"
+			method="execute">
+			<result name="success" type="redirect">/Administrador.jsp</result>
+		</action>
+		
+		<action name="VoltarPagina"
+			class="br.com.eder.cms.action.AdministradorAction"
+			method="execute">
+			<result name="success" type="redirect">/PaginaInicialAdministrador.jsp</result>
+		</action>
+		
+		<action name="VoltarPaginaUsuario"
+			class="br.com.eder.cms.action.AdministradorAction"
+			method="execute">
+			<result name="success" type="redirect">/PaginaInicialUsuario.jsp</result>
+		</action>
+		
+		<action name="AdicionarUsuarios"
+			class="br.com.eder.cms.action.AdministradorAction"
+			method="execute">
+			<result name="success" type="redirect">/AdicionarUsuarios.jsp</result>
+		</action>
+		
+		<action name="AdicionarUsuariosNoBanco"
+			class="br.com.eder.cms.action.AdministradorAction"
+			method="insere">
+			<result name="success" type="redirect">/AdicionarUsuariosSucesso.jsp</result>
+		</action>
+		
+		<action name="ExcluirUsuarios"
+			class="br.com.eder.cms.action.AdministradorAction"
+			method="execute">
+			<result name="success" type="dispatcher">/ExcluirUsuario.jsp</result>
+		</action>
+		
+		<action name="ExcluirUsuariosNoBanco"
+			class="br.com.eder.cms.action.AdministradorAction"
+			method="exclui">
+			<result name="success" type="redirect">/ExcluirUsuariosSucesso.jsp</result>
+		</action>
+		
+		<action name="ExibirUsuarios"
+			class="br.com.eder.cms.action.AdministradorAction"
+			method="exibir">
+			<result name="success" type="dispatcher">/PaginaUsuarios.jsp</result>
+		</action>
+		
+		<action name="ExibirTopicosPagina"
+			class="br.com.eder.cms.action.TopicosAction"
+			method="execute">
+			<result name="success" type="redirect">/Topicos.jsp</result>
+		</action>
+		
+		<action name="ExibirTopicos"
+			class="br.com.eder.cms.action.TopicosAction"
+			method="exibirTopicos">
+			<result name="success" type="dispatcher">/PaginaTopicos.jsp</result>
+		</action>
+		
+		<action name="ExibirTopicosUsuario"
+			class="br.com.eder.cms.action.TopicosAction"
+			method="exibirTopicos">
+			<result name="success" type="dispatcher">/PaginaTopicosUsuario.jsp</result>
+		</action>
+		
+		<action name="ExibirSecaoPagina"
+			class="br.com.eder.cms.action.SecaoAction"
+			method="execute">
+			<result name="success" type="redirect">/Secao.jsp</result>
+		</action>
+        
+        <action name="ExibirSecao"
+			class="br.com.eder.cms.action.SecaoAction"
+			method="exibirSecao">
+			<result name="success" type="dispatcher">/PaginaSecao.jsp</result>
+		</action>
+        
+        <action name="ExibirSecaoUsuario"
+			class="br.com.eder.cms.action.SecaoAction"
+			method="exibirSecao">
+			<result name="success" type="dispatcher">/PaginaSecaoUsuario.jsp</result>
+		</action>
+		
+		<action name="AdicionarSecao"
+			class="br.com.eder.cms.action.SecaoAction"
+			method="execute">
+			<result name="success" type="redirect">/AdicionarSecao.jsp</result>
+		</action>
+		
+		<action name="AdicionarSecaoNoBanco"
+			class="br.com.eder.cms.action.SecaoAction"
+			method="insereSecao">
+			<result name="success" type="redirect">/AdicionarSecaoSucesso.jsp</result>
+		</action>
+		
+		<action name="ExcluirSecao"
+			class="br.com.eder.cms.action.SecaoAction"
+			method="execute">
+			<result name="success" type="redirect">/ExcluirSecao.jsp</result>
+		</action>
+		
+		<action name="ExcluirSecaoNoBanco"
+			class="br.com.eder.cms.action.SecaoAction"
+			method="excluiSecao">
+			<result name="success" type="redirect">/ExcluirSecaoSucesso.jsp</result>
+		</action>
+		
+		<action name="AdicionarTopicos"
+			class="br.com.eder.cms.action.TopicosAction"
+			method="execute">
+			<result name="success" type="redirect">/AdicionarTopicos.jsp</result>
+		</action>
+		
+		<action name="AdicionarTopicosNoBanco"
+			class="br.com.eder.cms.action.TopicosAction"
+			method="insereTopicos">
+			<result name="success" type="redirect">/AdicionarTopicosSucesso.jsp</result>
+		</action>
+		
+		<action name="ExcluirTopicos"
+			class="br.com.eder.cms.action.TopicosAction"
+			method="execute">
+			<result name="success" type="redirect">/ExcluirTopicos.jsp</result>
+		</action>
+		
+		<action name="ExcluirTopicosNoBanco"
+			class="br.com.eder.cms.action.TopicosAction"
+			method="excluiTopicos">
+			<result name="success" type="redirect">/ExcluirTopicosSucesso.jsp</result>
+		</action>
+		
+		<action name="ExibirItemTopicoPagina"
+			class="br.com.eder.cms.action.ItemTopicoAction"
+			method="execute">
+			<result name="success" type="redirect">/ItemTopico.jsp</result>
+		</action>
+		
+		<action name="ExibirItemTopico"
+			class="br.com.eder.cms.action.ItemTopicoAction"
+			method="exibirItemTopico">
+			<result name="success" type="dispatcher">/PaginaItemTopico.jsp</result>
+		</action>
+		
+		<action name="ExibirItemTopicoUsuario"
+			class="br.com.eder.cms.action.ItemTopicoAction"
+			method="exibirItemTopico">
+			<result name="success" type="dispatcher">/PaginaItemTopicoUsuario.jsp</result>
+		</action>
+		
+		<action name="AdicionarItemTopico"
+			class="br.com.eder.cms.action.ItemTopicoAction"
+			method="execute">
+			<result name="success" type="redirect">/AdicionarItemTopico.jsp</result>
+		</action>
+		
+		<action name="AdicionarItemTopicoNoBanco"
+			class="br.com.eder.cms.action.ItemTopicoAction"
+			method="insereItemTopico">
+			<result name="success" type="redirect">/AdicionarItemTopicoSucesso.jsp</result>
+		</action>
+		
+		<action name="ExcluirItemTopico"
+			class="br.com.eder.cms.action.ItemTopicoAction"
+			method="execute">
+			<result name="success" type="redirect">/ExcluirItemTopico.jsp</result>
+		</action>
+		
+		<action name="ExcluirItemTopicoNoBanco"
+			class="br.com.eder.cms.action.ItemTopicoAction"
+			method="excluiItemTopico">
+			<result name="success" type="redirect">/ExcluirItemTopicoSucesso.jsp</result>
+		</action>
+		
+    </package>
+    
+</struts>
